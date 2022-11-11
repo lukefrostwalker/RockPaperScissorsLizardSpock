@@ -12,7 +12,7 @@
 </head>
 <body class="container py-">
     <main>
-        <div class="battle-main p-5 w-100 mb-0 bg-dark rounded-5">
+        <div class="battle-main p-1 w-100 mb-3 bg-dark rounded-5">
             <!------------------------------------------------ SCOREBOARD -->
             <!-- <div class="scoreboard d-float flex-column fw-bold text-center">
                 <h1 class="scoreboard__title">Scoreboard</h1>
@@ -20,21 +20,23 @@
                 <div class="scoreboard__computer-score float-end" id="compScore">Computer: whahat</div>
             </div> -->
             <!------------------------------------------------ DISPLAY -->
-            <div id="result" class="display text-center fw-bold d-block p-5 animate__animated animate__flash animate__slower animate__infinite">
+            <div id="result" class="display text-center fw-bold d-block p-2 animate__animated animate__flash animate__slower animate__infinite">
                 CHOOSE A MOVE TO START
             </div>
             <!------------------------------------------------ PLAYER SPRITES -->
-            <div class="spritebox d-flex flex-row justify-content-center mt-5">
+            <div class="spritebox d-flex flex-row justify-content-center mt-3">
                 <div class="player-section d-flex flex-column align-items-center col-4 grow-1">
                     <div class="player-section__move fs-1" id="playerAttackImg">
                         
                     </div>
-                    <img src="img/sprites/playerIdle1.gif" class="sprites p-3 animate__animated animate__fadeInLeft" id="playerSprite" alt="">
+
+                    <img src="img/sprites/playerIdle1.gif" class="sprites p-3 mb-4 animate__animated animate__fadeInLeft" id="playerSprite" alt="">
+
                     <div class="player-section__info text-center animate__animated animate__fadeInUp animate__slow">
-                        <div class="player-section__name h3 fw-bold mb-2 text-light">
+                        <div class="player-section__name fs-4 fw-bold mb-2 text-light">
                             Legolas
                         </div>
-                        <div class="scoreboard__player-score fw-bold fs-4 text-light" id="playerScore">
+                        <div class="scoreboard__player-score fw-bold fs-5 text-light" id="playerScore">
                             0
                         </div>
                     </div>
@@ -48,9 +50,11 @@
                     <div class="computer-section__move fs-1 d-flex" id="computerAttackImg">
                         
                     </div>
-                    <img src="img/sprites/computerIdle1.gif" class="sprites p-3 animate__animated animate__fadeInRight" id="computerSprite" alt="">
+
+                    <img src="img/sprites/computerIdle1.gif" class="sprites p-3 mb-4 animate__animated animate__fadeInRight" id="computerSprite" alt="">
+
                     <div class="computer-section__info text-center animate__animated animate__fadeInUp animate__slow">
-                        <div class="computer-section__name h3 fw-bold mb-2 text-light">
+                        <div class="computer-section__name fs-4 fw-bold mb-2 text-light">
                             Alatar
                         </div>
                         <div class="scoreboard__computer-score fw-bold fs-5 text-light" id="compScore">

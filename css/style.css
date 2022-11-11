@@ -5,7 +5,6 @@
 }
 body {
     background-color: #1E2021 !important;
-    height: 100vh;
     /* background: #15353A !important; */
 }
 .battle-main {
@@ -22,7 +21,7 @@ body {
     height: 120px;
 }
 .sprites {
-    height: 310px;
+    height: 265px;
 }
 .vs-section {
     color: #e98a1d;
@@ -34,7 +33,7 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 50%;
-    padding: 30px;
+    padding: 20px;
     text-shadow: 1px 1px 2px black;
 }
 .computer-section__info {
@@ -42,7 +41,7 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 50%;
-    padding: 30px;
+    padding: 20px;
     text-shadow: 1px 1px 2px black;
 } 
 .battle-info__display {
