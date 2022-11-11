@@ -5,6 +5,7 @@
 }
 body {
     background-color: #1E2021 !important;
+    height: 100vh;
     /* background: #15353A !important; */
 }
 .battle-main {
