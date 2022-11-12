@@ -10,11 +10,12 @@ var recorder
 var championIs
 var playerPick
 var computerPick
+let numOfRounds = document.querySelector("#rounds")
 
 function attack(playerChoice) {
     playerPick = playerChoice
     resetSprites()
-    for (i = 0; i < choices.length; i++);
+   
     let random = Math.floor(Math.random() * choices.length);
     var compChoice = choices[random];
     computerPick = compChoice
@@ -48,6 +49,7 @@ function attack(playerChoice) {
         playerLoses()
         cScore++
     }
+    rounds()
     recorder = record
     championIs = champ
     playerAttack()
@@ -57,10 +59,40 @@ function attack(playerChoice) {
     gameResult.innerHTML = result
     history()
 }
-// ATTACK IMAGE PLAYER
+// -----------------------------------END GAME
+function rounds() {
+    if (pScore == numOfRounds.value) {
+        setTimeout(() => {
+            computerSprite.src = "img/sprites/cDie.gif",
+            computerAttackImg.removeChild(computerAttackImg.firstElementChild)
+        }, 900)
+        
+        setTimeout(() => 
+            alert("Game Over!\nLegolas Wins!\nPress OK to play again.", 
+            resetSprites(), 
+            reset()), 1200)
+
+    } else if (cScore == numOfRounds.value) {
+        setTimeout(() => {
+            playerSprite.src = "img/sprites/pDie.gif",
+            playerAttackImg.removeChild(playerAttackImg.firstElementChild)
+        }, 900)
+
+        setTimeout(() => 
+            alert("Game Over!\nAlatar Wins!\nPress OK to play again.", 
+            resetSprites(), 
+            reset()), 1200)
+    }
+    console.log(pScore)
+    console.log(cScore)
+    console.log(numOfRounds.value)
+}
+
+// -----------------------------------ATTACK IMAGE PLAYER
 function playerAttack() {
     let playerAttackImg = document.querySelector("#playerAttackImg")
     let attackImg = document.createElement("img")
+    attackImg.classList.add("img-fluid")
     attackImg.style.width = "120px"
     attackImg.style.height = "120px"
     if (playerPick === "rock") {
@@ -70,7 +102,7 @@ function playerAttack() {
     } else if (playerPick === "scissors") {
         attackImg.src = "img/handsigns/scissors-human.png"
     }else if (playerPick === "lizard") {
-        attackImg.src = "img/handsigns/lizard-human-computer.png"
+        attackImg.src = "img/handsigns/lizard-human.png"
     }else if (playerPick === "spock") {
         attackImg.src = "img/handsigns/spock-human.png"
     }
@@ -84,10 +116,11 @@ function playerAttack() {
     }}, 1500)
 }
 
-// ATTACK IMAGE COMPUTER
+// -----------------------------------ATTACK IMAGE COMPUTER
 function computerAttack() {
     let computerAttackImg = document.querySelector("#computerAttackImg")
     let attackImg1 = document.createElement("img")
+    attackImg1.classList.add("img-fluid")
     attackImg1.style.width = "120px"
     attackImg1.style.height = "120px"
     if (computerPick === "rock") {
@@ -111,17 +144,18 @@ function computerAttack() {
     }}, 1500)
 }
 
-// MATCH HISTORY RECORD
+// -----------------------------------MATCH HISTORY RECORD
 function history() {
     let matchHistory = document.querySelector("#matchHistory")
     let history = document.createElement("div")
     history.innerHTML = recorder
     history.classList.add("h5", "text-center", "mb-2", "w100")
     if(championIs === "player") {
-        history.classList.add("text-success")
+        history.classList.add("text-decoration-underline")
     } else if(championIs ==="computer") {
-        history.classList.add("text-danger")
-    } else history.classList.add("text-secondary")
+        history.classList.add("text-decoration-line-through")
+    }
+    // } else history.classList.add("text-secondary")
     
     matchHistory.appendChild(history)
     
@@ -130,39 +164,48 @@ function history() {
     }
 } 
 
+// -----------------------------------SPRITE COKE ROYAL
 let playerSprite = document.querySelector("#playerSprite")
 let computerSprite = document.querySelector("#computerSprite")
 
 function playerWins() {
-    playerSprite.src = "img/sprites/playerAttack1.gif"
+    playerSprite.src = "img/sprites/pAttack.gif"
 
     setTimeout(() => {
-        playerSprite.src="img/sprites/playerJump1.gif"
+        playerSprite.src="img/sprites/pJump.gif"
     }, 1000);
 }
+
 function computerLoses() {
     setTimeout(() => {
-        computerSprite.src = "img/sprites/computerDie1.gif"
+        computerSprite.src = "img/sprites/cHurt.gif"
     }, 900)
 }
+
 function computerWins() {
-    computerSprite.src = "img/sprites/computerAttack1.gif"
+    computerSprite.src = "img/sprites/cAttack.gif"
     
     setTimeout(() => {
-        computerSprite.src="img/sprites/ComputerJump1.gif"
+        computerSprite.src = "img/sprites/CJump.gif"
     }, 1000);
 }
+
 function playerLoses() {
     setTimeout(() => {
-        playerSprite.src = "img/sprites/playerDie1.gif"
+        playerSprite.src = "img/sprites/pHurt.gif"
     }, 900)
 }
+
 function resetSprites() {
-    playerSprite.src = "img/sprites/playerIdle1.gif"
-    computerSprite.src = "img/sprites/computerIdle1.gif" 
+    playerSprite.src = "img/sprites/pIdle.gif"
+    computerSprite.src = "img/sprites/cIdle.gif" 
 }
+
+// -----------------------------------RESET
 function reset() {
     matchHistory.innerHTML = ""
+    cScore = 0
+    pScore = 0
     playerScore.innerHTML = 0
     compScore.innerHTML = 0
     playerAttackImg.innerHTML = ""
@@ -170,3 +213,4 @@ function reset() {
     gameResult.innerHTML = "CHOOSE A MOVE TO START"
     resetSprites()
 }
+

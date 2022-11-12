@@ -5,17 +5,16 @@
 }
 body {
     background-color: #1E2021 !important;
-    /* background: #15353A !important; */
 }
 .battle-main {
+    border: 8px solid #776454;
     background-image: url(../img/gui/gameBackground.png);
     background-position: 70% 10%;
-    border: 8px solid #776454;
 }
 .display {
-    color: #e98a1d;
-    text-shadow: 5px 5px 1px black;
     font-size: 4rem;
+    text-shadow: 5px 5px 1px black;
+    color: #e98a1d;
 }
 .player-section__move, .computer-section__move {
     height: 120px;
@@ -24,34 +23,51 @@ body {
     height: 265px;
 }
 .vs-section {
-    color: #e98a1d;
-    text-shadow: 5px 5px 1px black;
     font-size: 4rem;
+    text-shadow: 5px 5px 1px black;
+    color: #e98a1d;
 }
-.player-section__info, .computer-section__info {
-    background: url(../img/gui/playerScoreBoard.png);
-    background-size: 100% 100%;
+.rounds-box {
+    width: 100%;
     background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background: url(../img/gui/playerScoreBoard.png);
+}
+input:focus {
+    outline: none;
+}
+.player-section__info {
     width: 50%;
     padding: 20px;
-    text-shadow: 1px 1px 2px black;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background: url(../img/gui/playerScoreBoard.png);
 }
 .computer-section__info {
-    background: url(../img/gui/computerScoreBoard.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
     width: 50%;
     padding: 20px;
-    text-shadow: 1px 1px 2px black;
-} 
-.battle-info__display {
-    background-image: url(../img/gui/mainBorder.png);
-    background-size: 100% 100%;
     background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background: url(../img/gui/computerScoreBoard.png);
+} 
+.player-section__name, 
+.computer-section__name, 
+.battle-info__display,
+.scoreboard__computer-score,
+.scoreboard__player-score,
+.rounds_title,
+.rounds_title input {
+    text-shadow: 0px 1px 0px rgba(155, 155, 155, 0.5);
+    color: #3a2f26;
+}
+.battle-info__display {
     width: 20%;
     height: 270px;
     padding: 30px;
-    text-shadow: 1px 1px 2px black;
+    background-image: url(../img/gui/mainBorder.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* text-shadow: 1px 1px 2px black; */
 }
 .attacks {
     width: 120px;
@@ -65,12 +81,12 @@ body {
 .attacks:nth-of-type(n) {
     margin-right: 0px;
 }
-/* BUTTONS */
-.push {
-    background: #647986;
-    /* border: none; */
-    border-radius: 50%;
+/* -------------------------BUTTONS */
+.push, .reset-con{
     padding: 0;
+    border-radius: 50%;
+    background: #3a2f26;
+    /* border: none; */
     cursor: pointer;
     /* outline-offset: 10px; */
 }
@@ -84,25 +100,13 @@ body {
 .push:active .attacks {
     transform: translateY(-2px);
 }
-.reset-con {
-    background: #647986;
-    /* border: none; */
-    border-radius: 50%;
-    padding: 0;
-    cursor: pointer;
-    /* outline-offset: 10px; */
-}
 .reset {
-    /* display: block; */
     border-radius: 12px;
     font-size: 1.5rem;
     color: white;
     transform: translate(-3px, -04px);
+    /* display: block; */
 }
 .reset-con:active .reset {
     transform: translateY(-2px);
 }
-/* ANIMATION */
-:root {
-    --animate-delay: 0.5s;
-  }
