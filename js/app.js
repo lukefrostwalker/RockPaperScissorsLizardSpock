@@ -186,7 +186,7 @@ function computerWins() {
     computerSprite.src = "img/sprites/cAttack.gif"
     
     setTimeout(() => {
-        computerSprite.src = "img/sprites/CJump.gif"
+        computerSprite.src = "img/sprites/cJump.gif"
     }, 1000);
 }
 
