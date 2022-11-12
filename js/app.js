@@ -172,7 +172,7 @@ function playerWins() {
     playerSprite.src = "img/sprites/pAttack.gif"
 
     setTimeout(() => {
-        playerSprite.src="img/sprites/pJump.gif"
+        playerSprite.src = "img/sprites/pJump.gif"
     }, 1000);
 }
 
