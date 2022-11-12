@@ -28,27 +28,27 @@ body {
     color: #e98a1d;
 }
 .rounds-box {
+    background: url(../img/gui/playerScoreBoard.png);
     width: 100%;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background: url(../img/gui/playerScoreBoard.png);
 }
 input:focus {
     outline: none;
 }
 .player-section__info {
+    background: url(../img/gui/playerScoreBoard.png);
     width: 50%;
     padding: 20px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background: url(../img/gui/playerScoreBoard.png);
 }
 .computer-section__info {
+    background: url(../img/gui/computerScoreBoard.png);
     width: 50%;
     padding: 20px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background: url(../img/gui/computerScoreBoard.png);
 } 
 .player-section__name, 
 .computer-section__name, 
