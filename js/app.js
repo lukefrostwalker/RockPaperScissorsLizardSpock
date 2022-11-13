@@ -11,6 +11,8 @@ var championIs;
 var playerPick;
 var computerPick;
 let numOfRounds = document.querySelector("#rounds");
+let fireworks = document.querySelector("#fireworks")
+fireworks.style.display = "none"
 
 function attack(playerChoice) {
     gameResult.innerHTML = "⠀";
@@ -66,6 +68,7 @@ function attack(playerChoice) {
 function rounds() {
     if (pScore == numOfRounds.value) {
         setTimeout(() => {
+            fireworks.style.display = "block"
             computerSprite.src = "img/sprites/cDie.gif",
             computerAttackImg.removeChild(computerAttackImg.firstElementChild),
             gameResult.innerHTML = "👑"
@@ -74,7 +77,7 @@ function rounds() {
         
         setTimeout(() => 
             alert("Game Over!\nLegolas Wins!\nPress OK to play again.", 
-            reset()), 1200);
+            reset()), 2500);
 
     } else if (cScore == numOfRounds.value) {
         setTimeout(() => {
@@ -215,5 +218,6 @@ function reset() {
     gameResult.innerHTML = "CHOOSE A MOVE TO START";
     gameResult.style.fontSize = ""
     resetSprites();
+    fireworks.style.display = "none";
 }
 
