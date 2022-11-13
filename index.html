@@ -11,11 +11,13 @@
   </head>
 </head>
 <body class="container">
-    <main>
-        <div class="battle-main p-1 w-100 mb-3 bg-dark rounded-5">
+    <main class="mt-3">
+        <div class="battle-main p-1 w-100 mb-2 bg-dark rounded-5">
             <!--------------------------------- DISPLAY -->
-            <div id="result" class="display text-center fw-bold d-block animate__animated animate__flash animate__slower animate__infinite">
-                CHOOSE A MOVE TO START
+            <div  class="game_title text-center fw-bold d-block">
+                <h1 class="display-2 fw-bold animate__animated animate__zoomIn">
+                    Jajanken+
+                </h1>
             </div>
             
             <!--------------------------------- PLAYER SPRITES -->
@@ -24,28 +26,43 @@
                 <div class="player-section d-flex flex-column align-items-start col-4 grow-1">
                     <div class="player-section__move fs-1 ps-5" id="playerAttackImg"></div>
 
-                    <img src="img/sprites/pIdle.gif" class="sprites mb-4 img-fluid animate__animated animate__fadeInLeft" id="playerSprite" alt="">
+                    <img src="img/sprites/pIdle.gif" 
+                        class="sprites mb-4 img-fluid animate__animated animate__fadeInLeft" 
+                        id="playerSprite"
+                        alt="PLAYER"
+                    >
 
                     <div class="player-section__info text-center animate__animated animate__fadeInUp animate__slow">
                         <div class="player-section__name fs-4 fw-bold mb-2">
                             Legolas
                         </div>
-                        <div class="scoreboard__player-score fw-bold fs-5" id="playerScore">
+
+                        <div class="scoreboard__player-score fw-bold fs-5" 
+                            id="playerScore">
                             0
                         </div>
                     </div>
                 </div>
 
                 <!-------------------------------------------------VS -->   
-                <div class="vs-box d-flex flex-column align-items-center justify-content-center text-center col-1">
-                    <div class="vs-section fw-bold  animate__animated animate__pulse animate__infinite">
-                        VS
+                <div class="vs-box d-flex flex-column align-items-center justify-content-between text-center col-1 pt-5">
+                    <div class="animate__animated animate__pulse animate__infinite h-100 d-flex align-items-center" >
+                        <h2 class="vs-section display-5 fw-bold" 
+                            id="result">
+                            CHOOSE A MOVE TO START
+                        </h2>
                     </div>
     
-                    <div class="rounds-box py-3 small fw-bold">
-                        <span class="rounds_title">ROUNDS: 
+                    <div class="rounds-box py-3 small fw-bold mb-3">
+                        <span class="rounds_title">
+                            ROUNDS: 
                                 <span>
-                                    <input class="w-50 text-center border-none bg-transparent fw-bold" id="rounds" type="number" value="3" min="1" step="1" onkeydown="return false">
+                                    <input class="w-50 text-center border-none bg-transparent fw-bold" 
+                                        id="rounds" 
+                                        type="number" 
+                                        value="3" min="1" step="1" 
+                                        onkeydown="return false"
+                                    >
                                 </span>
                         </span>
                     </div>
@@ -57,61 +74,97 @@
                         
                     </div>
 
-                    <img src="img/sprites/cIdle.gif" class="sprites mb-4 img-fluid animate__animated animate__fadeInRight" id="computerSprite" alt="">
+                    <img src="img/sprites/cIdle.gif" 
+                        class="sprites mb-4 img-fluid animate__animated animate__fadeInRight" 
+                        id="computerSprite"
+                        alt="COMPUTER"
+                    >
 
                     <div class="computer-section__info text-center animate__animated animate__fadeInUp animate__slow">
                         <div class="computer-section__name fs-4 fw-bold mb-2">
                             Alatar
                         </div>
-                        <div class="scoreboard__computer-score fw-bold fs-5 img-fluid" id="compScore">
+                        <div class="scoreboard__computer-score fw-bold fs-5 img-fluid" 
+                            id="compScore">
                             0
                         </div>
                     </div>
                 </div>
             </div>
-        </div class=>
+        </div>
 
         <!--------------------------------- UNDER -->
         <div class="battle-gear d-flex flex-row justify-content-between w-100">
             <!-------------------------------------------------MATCH HISTORY -->
-            <div class="battle-info__display d-flex flex-column col-4 align-items-center">
-                <p class="battle-info__title mb-2 fw-bold fs-4">
+            <div class="battle-info__display d-flex flex-column col-4 align-items-center d-none d-md-block">
+                <p class="battle-info__title mb-2 fw-bold fs-4 text-center">
                     MATCH HISTORY
                 </p> 
-                <div id="matchHistory" class="match-history text-center w-100">
 
+                <div id="matchHistory" 
+                    class="match-history text-center w-100">
                 </div>
             </div>
 
             <!-------------------------------------------------ATTACKS -->
-            <div class="battle-gear__attacks d-flex flex-row justify-content-evenly align-items-center col-7">
+            <div class="attack-border d-flex justify-content-evenly">
+            <div class="battle-gear__attacks d-flex flex-row justify-content-evenly align-items-center col-10 col-md-7 w-100">
                 <div class="push">
-                    <img src="img/handsigns/rock.png" class="attacks img-fluid" id="rock" onclick="attack('rock')"alt="">
+                    <img src="img/handsigns/rock.png" 
+                        class="attacks img-fluid" 
+                        id="rock" 
+                        onclick="attack('rock')" 
+                        alt="ROCK"
+                    >
                 </div>
                 <div class="push">
-                    <img src="img/handsigns/paper.png" class="attacks img-fluid" id="paper" onclick="attack('paper')" alt="">
+                    <img src="img/handsigns/paper.png" 
+                        class="attacks img-fluid" 
+                        id="paper" 
+                        onclick="attack('paper')" 
+                        alt="PAPER"
+                    >
                 </div>
                 <div class="push">
-                    <img src="img/handsigns/scissors.png" class="attacks img-fluid" id="scissors" onclick="attack('scissors')" alt="">
+                    <img src="img/handsigns/scissors.png" 
+                        class="attacks img-fluid" 
+                        id="scissors" 
+                        onclick="attack('scissors')" 
+                        alt="SCISSORS"
+                    >
                 </div>
                 <div class="push">
-                    <img src="img/handsigns/lizard.png" class="attacks img-fluid" id="lizard" onclick="attack('lizard')" alt="">
+                    <img src="img/handsigns/lizard.png" 
+                        class="attacks img-fluid" 
+                        id="lizard" 
+                        onclick="attack('lizard')" 
+                        alt="LIZARD"
+                    >
                 </div>
                 <div class="push">
-                    <img src="img/handsigns/spock.png" class="attacks img-fluid" id="spock" onclick="attack('spock')" alt="">
+                    <img src="img/handsigns/spock.png" 
+                        class="attacks img-fluid" 
+                        id="spock" 
+                        onclick="attack('spock')" 
+                        alt="SPOCK"
+                    >
                 </div>
             </div>
 
             <!-------------------------------------------------RESET -->
-            <div class="col-1 d-flex justify-content-evenly align-items-center">
+            <div class=" d-flex justify-content-evenly align-items-center col-2 col-md-1">
                 <div class="reset-con">
-                    <img src="img/reset.png" class="reset img-fluid" id="reset" onclick="reset()" alt="">
+                    <img src="img/reset.png" 
+                        class="reset img-fluid" 
+                        id="reset" 
+                        onclick="reset()" 
+                        alt="RESET"
+                    >
                 </div>
+            </div>
             </div>
         </div>
     </main>
-    
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
 </body>

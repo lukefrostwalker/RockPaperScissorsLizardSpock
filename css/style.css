@@ -6,13 +6,15 @@
 body {
     background-color: #1E2021 !important;
 }
+.main {
+    height: 100%;
+}
 .battle-main {
     border: 8px solid #776454;
     background-image: url(../img/gui/gameBackground.png);
     background-position: 70% 10%;
 }
-.display {
-    font-size: 4rem;
+.game_title {
     text-shadow: 5px 5px 1px black;
     color: #e98a1d;
 }
@@ -23,7 +25,6 @@ body {
     height: 265px;
 }
 .vs-section {
-    font-size: 4rem;
     text-shadow: 5px 5px 1px black;
     color: #e98a1d;
 }
@@ -67,7 +68,15 @@ input:focus {
     background-image: url(../img/gui/mainBorder.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    /* text-shadow: 1px 1px 2px black; */
+}
+.attack-border {
+    width: 4100%;
+    height: 270px;
+    padding-left: 100px;
+    padding-right: 110px;
+    background-image: url(../img/gui/mainBorder.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 .attacks {
     width: 120px;
@@ -76,7 +85,7 @@ input:focus {
 }
 #reset {
     width: 80px;
-    height: 80px;
+    cursor: pointer;
 }
 .attacks:nth-of-type(n) {
     margin-right: 0px;
@@ -86,14 +95,11 @@ input:focus {
     padding: 0;
     border-radius: 50%;
     background: #3a2f26;
-    /* border: none; */
     cursor: pointer;
-    /* outline-offset: 10px; */
 }
 .attacks, .reset {
     display: block;
     border-radius: 12px;
-    font-size: 1.25rem;
     color: white;
     transform: translate(-3px, -04px);
 }
@@ -102,11 +108,41 @@ input:focus {
 }
 .reset {
     border-radius: 12px;
-    font-size: 1.5rem;
     color: white;
     transform: translate(-3px, -04px);
-    /* display: block; */
 }
 .reset-con:active .reset {
     transform: translateY(-2px);
+}
+
+@media only screen and (max-width: 768px) {
+    .battle-main {
+        background-position: 0% 50%;
+    }
+    .player-section__info, .computer-section__info, .rounds-box {
+        background: none;
+    }
+    .attack-border {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .rounds-box {
+        width: 120px;
+    }
+    .player-section__info, .computer-section__info {
+        padding: 0px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .player-section__info > div, .computer-section__info > div {
+        font-size: 18px !important;
+    }
+    .attack-border {
+        background: none;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .sprites {
+        height: 100px !important;
+    }
 }

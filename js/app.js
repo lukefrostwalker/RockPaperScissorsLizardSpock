@@ -13,9 +13,10 @@ var computerPick
 let numOfRounds = document.querySelector("#rounds")
 
 function attack(playerChoice) {
+    gameResult.innerHTML = "⠀"
     playerPick = playerChoice
     resetSprites()
-   
+    
     let random = Math.floor(Math.random() * choices.length);
     var compChoice = choices[random];
     computerPick = compChoice
@@ -56,36 +57,35 @@ function attack(playerChoice) {
     computerAttack()
     playerScore.innerHTML = pScore
     compScore.innerHTML = cScore
-    gameResult.innerHTML = result
-    history()
+    setTimeout(() => {
+        gameResult.innerHTML = result
+    }, 500)
+    history()   
 }
 // -----------------------------------END GAME
 function rounds() {
     if (pScore == numOfRounds.value) {
         setTimeout(() => {
             computerSprite.src = "img/sprites/cDie.gif",
-            computerAttackImg.removeChild(computerAttackImg.firstElementChild)
+            computerAttackImg.removeChild(computerAttackImg.firstElementChild),
+            gameResult.innerHTML = "👑"
         }, 900)
         
         setTimeout(() => 
             alert("Game Over!\nLegolas Wins!\nPress OK to play again.", 
-            resetSprites(), 
             reset()), 1200)
 
     } else if (cScore == numOfRounds.value) {
         setTimeout(() => {
             playerSprite.src = "img/sprites/pDie.gif",
-            playerAttackImg.removeChild(playerAttackImg.firstElementChild)
+            playerAttackImg.removeChild(playerAttackImg.firstElementChild),
+            gameResult.innerHTML = "☠️"
         }, 900)
 
         setTimeout(() => 
             alert("Game Over!\nAlatar Wins!\nPress OK to play again.", 
-            resetSprites(), 
             reset()), 1200)
     }
-    console.log(pScore)
-    console.log(cScore)
-    console.log(numOfRounds.value)
 }
 
 // -----------------------------------ATTACK IMAGE PLAYER
@@ -93,8 +93,8 @@ function playerAttack() {
     let playerAttackImg = document.querySelector("#playerAttackImg")
     let attackImg = document.createElement("img")
     attackImg.classList.add("img-fluid")
-    attackImg.style.width = "120px"
-    attackImg.style.height = "120px"
+    attackImg.style.width = "100px"
+    attackImg.style.height = "100px"
     if (playerPick === "rock") {
         attackImg.src = "img/handsigns/rock-human.png"
     } else if (playerPick === "paper") {
@@ -121,8 +121,8 @@ function computerAttack() {
     let computerAttackImg = document.querySelector("#computerAttackImg")
     let attackImg1 = document.createElement("img")
     attackImg1.classList.add("img-fluid")
-    attackImg1.style.width = "120px"
-    attackImg1.style.height = "120px"
+    attackImg1.style.width = "100px"
+    attackImg1.style.height = "100px"
     if (computerPick === "rock") {
         attackImg1.src = "img/handsigns/rock-computer.png"
     } else if (computerPick === "paper") {
@@ -179,7 +179,7 @@ function playerWins() {
 function computerLoses() {
     setTimeout(() => {
         computerSprite.src = "img/sprites/cHurt.gif"
-    }, 900)
+    }, 700)
 }
 
 function computerWins() {
@@ -193,7 +193,7 @@ function computerWins() {
 function playerLoses() {
     setTimeout(() => {
         playerSprite.src = "img/sprites/pHurt.gif"
-    }, 900)
+    }, 750)
 }
 
 function resetSprites() {
